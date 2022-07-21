@@ -35,15 +35,15 @@
 
       :else
       (case (play-round c1 c2)
-        :card1 (game [(first d1)]
+        :card1 (recur [(first d1)]
                      (concat (rest d1) ac1 ac2)
                      [(first d2)]
                      (rest d2))
-        :card2 (game [(first d1)]
+        :card2 (recur [(first d1)]
                      (rest d1)
                      [(first d2)]
                      (concat (rest d2) ac2 ac1))
-        nil    (game (concat (reverse (take 4 d1)) ac1)
+        nil    (recur (concat (reverse (take 4 d1)) ac1)
                      (drop 4 d1)
                      (concat (reverse (take 4 d2)) ac2)
                      (drop 4 d2))))))
