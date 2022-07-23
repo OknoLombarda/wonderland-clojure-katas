@@ -21,16 +21,16 @@
       []
 
       :else
-      (nth (filter seq
-                   (lazy-seq
-                    (map #(chain (conj chain-so-far %)
-                                 (remove #{%} words)
-                                 goal)
-                         candidates)))
-           0 []))))
+      (->> candidates
+           (map #(chain
+                  (conj chain-so-far %)
+                  (remove #{%} words)
+                  goal))
+           lazy-seq
+           (filter seq)
+           (#(nth % 0 []))))))
 
 (defn doublets [w1 w2]
   (let [length (count w1)
-        words (filter #(and (= length (count %)) #{w1})
-                      words)]
+        words (filter #(= length (count %)) words)]
     (chain [w1] words w2)))
