@@ -1,6 +1,6 @@
 (ns doublets.solver-test
-  (:require [clojure.test :refer :all]
-            [doublets.solver :refer :all]))
+  (:require [clojure.test :refer [deftest testing is]]
+            [doublets.solver :refer [doublets]]))
 
 (deftest solver-test
   (testing "with word links found"
