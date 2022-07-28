@@ -1,6 +1,6 @@
 (ns magic-square.puzzle-test
-  (:require [clojure.test :refer :all]
-            [magic-square.puzzle :refer :all]))
+  (:require [clojure.test :refer [deftest testing is]]
+            [magic-square.puzzle :refer [magic-square values]]))
 
 (defn sum-rows [m]
   (map #(reduce + %) m))
