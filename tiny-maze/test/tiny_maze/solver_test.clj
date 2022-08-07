@@ -1,6 +1,6 @@
 (ns tiny-maze.solver-test
-  (:require [clojure.test :refer :all]
-            [tiny-maze.solver :refer :all]))
+  (:require [clojure.test :refer [deftest testing is]]
+            [tiny-maze.solver :refer [solve-maze]]))
 
 (deftest test-solve-maze
   (testing "can find way to exit with 3x3 maze"
