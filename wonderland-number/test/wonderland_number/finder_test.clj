@@ -1,6 +1,6 @@
 (ns wonderland-number.finder-test
-  (:require [clojure.test :refer :all]
-            [wonderland-number.finder :refer :all]))
+  (:require [clojure.test :refer [deftest testing is]]
+            [wonderland-number.finder :refer [wonderland-number]]))
 
 (defn hasAllTheSameDigits? [n1 n2]
   (let [s1 (set (str n1))
